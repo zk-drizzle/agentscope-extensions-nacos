@@ -10,26 +10,25 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
     
-    <artifactId>agentscope-extension-a2a</artifactId>
-    <name>AgentScope Extensions A2A Java</name>
-    <description>Nacos extensions component for A2A(Agent2Agent) - Java</description>
+    <artifactId>agentscope-extensions-mcp-nacos</artifactId>
+    <name>AgentScope Extensions Nacos MCP Java</name>
+    <description>AgentScope extensions component for Nacos MCP Registry - Java</description>
     
     <dependencies>
         <dependency>
             <groupId>io.agentscope</groupId>
             <artifactId>agentscope-core</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-simple</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         
         <dependency>
-            <groupId>io.github.a2asdk</groupId>
-            <artifactId>a2a-java-sdk-client</artifactId>
+            <groupId>io.modelcontextprotocol.sdk</groupId>
+            <artifactId>mcp</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.alibaba.nacos</groupId>
+            <artifactId>nacos-client</artifactId>
         </dependency>
     </dependencies>
-
+    
 </project>

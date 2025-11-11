@@ -12,8 +12,9 @@
     <name>AgentScope Extensions Nacos Java</name>
     <description>AgentScope extensions component for Nacos - Java</description>
     <modules>
-        <module>agentscope-extension-a2a</module>
+        <module>agentscope-extensions-a2a</module>
         <module>agentscope-extensions-a2a-nacos</module>
+        <module>agentscope-extensions-mcp-nacos</module>
     </modules>
     
     <properties>
@@ -27,6 +28,7 @@
         <agentscope.version>0.1.0</agentscope.version>
         <nacos.version>3.1.0</nacos.version>
         <a2a-java.version>0.3.2.Final</a2a-java.version>
+        <mcp-java.version>0.14.1</mcp-java.version>
         <logback.version>1.5.20</logback.version>
         
         <junit5.version>5.14.1</junit5.version>
@@ -44,6 +46,12 @@
                 <groupId>io.agentscope</groupId>
                 <artifactId>agentscope-core</artifactId>
                 <version>${agentscope.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-simple</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             
             <!-- Nacos Client -->
@@ -60,6 +68,13 @@
                 <version>${a2a-java.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            
+            <!-- MCP JAVA -->
+            <dependency>
+                <groupId>io.modelcontextprotocol.sdk</groupId>
+                <artifactId>mcp</artifactId>
+                <version>${mcp-java.version}</version>
             </dependency>
             
             <!-- Log -->
